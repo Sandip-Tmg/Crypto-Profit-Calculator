@@ -225,35 +225,16 @@ class StockTradeProfitCalculator(QDialog):
         sellTotal = sellValue * quantity
         return sellTotal
 
-    ################ YOU DO NOT HAVE TO EDIT CODE BELOW THIS POINT  ########################################################
 
     def make_data(self):
-        '''
-        This code is complete
-        Data source is derived from https://www.kaggle.com/camnugent/sandp500/download but use the provided file to avoid confusion
 
-        Converts a CSV file to a dictonary fo dictionaries like
-
-            Stock   -> Date      -> Close
-            AAL     -> 08/02/2013 -> 14.75
-                    -> 11/02/2013 -> 14.46
-                    ...
-            AAPL    -> 08/02/2013 -> 67.85
-                    -> 11/02/2013 -> 65.56
-
-        Helpful tutorials to understand this
-        - https://stackoverflow.com/questions/482410/how-do-i-convert-a-string-to-a-double-in-python
-        - nested dictionaries https://stackoverflow.com/questions/16333296/how-do-you-create-nested-dict-in-python
-        - https://www.tutorialspoint.com/python3/python_strings.htm
-        :return: a dictionary of dictionaries
-        '''
         file = open("./CryptoCoins_Prices/combined.csv",
-                    "r")  # open a CSV file for reading https://docs.python.org/3/library/functions.html#open
+                    "r")  # open a CSV file
         data = {}  # empty data dictionary
         file_rows = []  # empty list of file rows
         # add rows to the file_rows list
         for row in file:
-            file_rows.append(row.strip())  # https://www.geeksforgeeks.org/python-string-strip-2/
+            file_rows.append(row.strip())
         # print("len(file_rows):" + str(len(file_rows)))
 
         # get the column headings of the CSV file
@@ -289,7 +270,6 @@ class StockTradeProfitCalculator(QDialog):
 
     def string_date_into_QDate(self, date_String):
         '''
-        This method is complete
         Converts a data in a string format like that in a CSV file to QDate Objects for use with QCalendarWidget
         :param date_String: data in a string format
         :return:
@@ -300,7 +280,6 @@ class StockTradeProfitCalculator(QDialog):
 
     def unique(self, non_unique_list):
         '''
-        This method is complete
         Converts a list of non-unique values into a list of unique values
         Developed from https://www.geeksforgeeks.org/python-get-unique-values-list/
         :param non_unique_list: a list of non-unique values
